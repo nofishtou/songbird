@@ -27,5 +27,5 @@ export function PickedAnswer(props: IPickedAnswer): JSX.Element {
     </>)
   }
 
-  return <span>Pick answer</span>
+  return <span>Прослушайте вопрос и выберите вариант ответа</span>
 }

@@ -32,7 +32,7 @@ export function MainPage(): JSX.Element {
     if(currentPosition === Birds.length - 1) {
       setIsEnd(true);
       setIsShowModal(true);
-      setModalText(createResultText(score));
+      setModalText(createResultText(newScore));
     }
   }
 
@@ -51,11 +51,12 @@ export function MainPage(): JSX.Element {
 
   useEffect(() => {
     setQuestionNumber(getRandomIntInclusive(0, 5));
-    setAnswerId(Birds[currentPosition][questionNumber].id)
-    console.log(answerId);
-    setIsCorrectAnswer(false)
-  }, [currentPosition, questionNumber, answerId])
-
+    setAnswerId(Birds[currentPosition][questionNumber].id);
+    setIsCorrectAnswer(false);
+    console.log(answerId, 'answer');
+  }, [currentPosition, questionNumber, answerId ])
+  
+  
 
   return (
     <>
@@ -63,8 +64,10 @@ export function MainPage(): JSX.Element {
       <Question bird={Birds[currentPosition][questionNumber]} isCorrectAnswer={isCorrectAnswer}/>
       <Answers birds={Birds[currentPosition]} checkAnswer={checkAnswer} decrementCurrentScore={decrementCurrentScore} isCorrectAnswer={isCorrectAnswer} answer={answerId} playAudioCorrect={playAudioCorrect} playAudioFailure={playAudioFailure}/>
       <div className="main-page-buttons">
-        { isEnd ? "" : <button className="main-page-button" onClick={changeStage} disabled={!isCorrectAnswer}>Next level</button>}   
-        { isEnd ? <button className="main-page-button" onClick={playAgain}>Play again</button> : ""}
+        { isEnd ?
+         <button className="main-page-button" onClick={playAgain}>Play again</button> : 
+         <button className="main-page-button" onClick={changeStage} disabled={!isCorrectAnswer}>Next level</button>
+        }   
       </div>
       < Modal  text={modalText} isShow={isShowModal} closeModal={closeModal}/>
     </>

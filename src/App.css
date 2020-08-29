@@ -122,8 +122,33 @@ hr {
 .answers-list-item.correct::marker {
   color: #66bb6a;
 }
+
 .answers-list-item.wrong::marker {
   color: #ff3d00;
+}
+
+/* chrome support */
+
+.answers-list-item {
+  list-style: none;
+}
+
+.answers-list-item.default:before {
+    content: '\25CF\00a0\00a0';
+    color: #212121;
+    display: inline;
+}
+
+.answers-list-item.correct::before {
+  content: '\25CF\00a0\00a0';
+  color: #66bb6a;
+  display: inline;
+}
+
+.answers-list-item.wrong::before {
+  content: '\25CF\00a0\00a0';
+  color: #ff3d00;
+  display: inline;
 }
 
 .answers-picked-answer {
@@ -222,18 +247,6 @@ hr {
   cursor: pointer;
 }
 
-@keyframes modal-show {
-	0% { opacity: 0; }
-	100% { opacity: 1; }
-}
-
-@media (min-width: 320px) and (max-width: 768px) {
-  .modal-content {
-    width: 280px;
-    word-wrap: break-word;
-  }  
-}  
-
 .main-page-buttons {
   display: flex;
   justify-content: center;
@@ -306,6 +319,226 @@ hr {
 .rhap_main .rhap_progress-filled {
   background-color: #e64a19;
 }
+
+@keyframes modal-show {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@media (min-width: 960px) and (max-width: 1199px) {
+  .App {
+    width: 920px;
+  }
+
+  .picked-answer {
+    flex-direction: column;
+  }
+
+  .question-image-container {
+    width: 50%;
+  }
+
+  .question-image-container img{
+    height: 250px;
+  }
+
+  .picked-answer-image {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .picked-answer-image img {
+    height: 250px;
+  }
+
+  .main-page-buttons {
+    padding-bottom: 30px;
+  }
+}  
+
+@media (min-width: 768px) and (max-width: 959px) {
+  .App {
+    width: 720px;
+  }
+
+  .picked-answer {
+    flex-direction: column;
+  }
+
+  .question-image-container {
+    width: 50%;
+  }
+
+  .question-image-container img{
+    height: 200px;
+  }
+
+  .picked-answer-image {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .picked-answer-image img {
+    height: 200px;
+  }
+
+  .main-page-buttons {
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .App {
+    width: 340px;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-nav li {
+    margin-bottom: 10px;
+  }
+
+  .question {
+    flex-direction: column;
+  }
+
+  .picked-answer {
+    flex-direction: column;
+  }
+
+  .question-image-container {
+    width: 100%;
+    padding-bottom: 0px;
+  }
+
+  .question-image-container img{
+    height: 300px;
+  }
+
+  .question-audio-container {
+    width: 100%;
+  }
+
+  .answers {
+    flex-direction: column;
+  }
+
+  .answers-list {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+
+  .answers-picked-answer {
+    width: 100%;
+    margin-left: 0px;
+    padding: 15px;
+  }
+
+  .picked-answer-image {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .picked-answer {
+    align-items: center;
+  }
+
+  .picked-answer-image img {
+    height: 200px;
+  }
+
+  .main-page-buttons {
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .App {
+    width: 280px;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-nav li {
+    margin-bottom: 10px;
+  }
+
+  .question {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .picked-answer {
+    flex-direction: column;
+  }
+
+  .question-image-container {
+    width: 100%;
+    padding: 0px;
+    padding-bottom: 15px;
+  }
+
+  .question-image-container img{
+    height: 250px;
+  }
+
+  .question-audio-container {
+    width: 100%;
+    padding: 0px;
+    min-width: 260px;
+  }
+
+  .answers {
+    flex-direction: column;
+  }
+
+  .answers-list {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+
+  .answers-picked-answer {
+    width: 100%;
+    margin-left: 0px;
+    padding: 15px;
+  }
+
+  .picked-answer-image {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .picked-answer {
+    align-items: center;
+  }
+
+  .picked-answer-audio {
+    min-width: 260px;
+  }
+
+  .picked-answer-image img {
+    height: 200px;
+  }
+
+  .main-page-buttons {
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .modal-content {
+    width: 280px;
+    word-wrap: break-word;
+  }  
+}  
 
 @media(hover: hover){
   .main-page-button:hover {

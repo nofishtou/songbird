@@ -17,7 +17,6 @@ export function Answers(props: IAnswersProps): JSX.Element {
   const [currentAnswer, setCurrentAnswer] = useState(6);
   const [isCorrectAnswers, setIsCorrectAnswers] = useState([ 'default', 'default', 'default', 'default', 'default', 'default' ])
 
-
   useEffect(() => {
     setCurrentAnswer(6)
     setIsCorrectAnswers([ 'default', 'default', 'default', 'default', 'default', 'default' ])

@@ -20,20 +20,16 @@ export const playAudioFailure = () => {
 
 export const createResultText = (result: number) => {
   if(result <= 10) {
-    return 'very bad'
-  }
-  if(result <= 15) {
-    return 'bad'
-  }
-  if(result <= 20) {
-    return 'normal'
-  }
-  if(result <= 25) {
-    return 'good'
-  }
-  if(result < 30) {
-    return 'very good'
+    return `Вы набрали ${result} из 30. Возможно вам стоит узнать больше о птицах.`
   }
 
-  return "awesome"
+  if(result <= 20) {
+    return `Вы набрали ${result} из 30. У вас удовлетворительные знания о птицах.`
+  }
+
+  if(result < 30) {
+    return `Вы набрали ${result} из 30. У вас уверенные знания о птицах.`
+  }
+
+  return `Вы набрали ${result} из 30. Возможно вы орнитолог?`
 }
