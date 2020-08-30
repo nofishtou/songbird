@@ -5,8 +5,6 @@ import { Header } from "./header";
 import { Modal } from "./modal";
 import { Question } from "./question";
 import {
-  playAudioCorrect,
-  playAudioFailure,
   getRandomIntInclusive,
   createResultText,
 } from "../accessories/accessories";
@@ -81,8 +79,6 @@ export function MainPage(): JSX.Element {
         decrementCurrentScore={decrementCurrentScore}
         isCorrectAnswer={isCorrectAnswer}
         answer={answerId}
-        playAudioCorrect={playAudioCorrect}
-        playAudioFailure={playAudioFailure}
       />
       <div className="main-page-buttons">
         {isEnd ? (
