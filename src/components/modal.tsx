@@ -4,6 +4,7 @@ interface IModalProps {
   isShow: boolean;
   closeModal: Function;
   text: string;
+  playAgain: Function;
 }
 
 export function Modal(props: IModalProps): JSX.Element {
@@ -15,6 +16,11 @@ export function Modal(props: IModalProps): JSX.Element {
         </button>
         <div className="modal-text">
           <p>{props.text}</p>
+          <div className="modal-page-buttons">
+            <button className="main-page-button" onClick={() => props.playAgain()}>
+              Сыграть снова
+            </button>
+          </div>
         </div>
       </div>
     </div>

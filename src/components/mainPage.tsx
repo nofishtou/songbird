@@ -11,7 +11,7 @@ import {
 
 export function MainPage(): JSX.Element {
   const [score, setScore] = useState(0);
-  const [currentPosition, setCurrentPosition] = useState(0);
+  const [currentPosition, setCurrentPosition] = useState(5);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [answerId, setAnswerId] = useState(0);
   const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
@@ -44,6 +44,8 @@ export function MainPage(): JSX.Element {
     setCurrentPosition(0);
     setScore(0);
     setIsEnd(false);
+    setIsCorrectAnswer(false);
+    setIsShowModal(false);
   };
 
   const closeModal = () => {
@@ -82,9 +84,7 @@ export function MainPage(): JSX.Element {
       />
       <div className="main-page-buttons">
         {isEnd ? (
-          <button className="main-page-button" onClick={playAgain}>
-            Сыграть снова
-          </button>
+          ""
         ) : (
           <button
             className="main-page-button"
@@ -95,7 +95,7 @@ export function MainPage(): JSX.Element {
           </button>
         )}
       </div>
-      <Modal text={modalText} isShow={isShowModal} closeModal={closeModal} />
+      <Modal text={modalText} isShow={isShowModal} closeModal={closeModal} playAgain={playAgain} />
     </>
   );
 }
