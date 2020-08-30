@@ -11,7 +11,7 @@ import {
 
 export function MainPage(): JSX.Element {
   const [score, setScore] = useState(0);
-  const [currentPosition, setCurrentPosition] = useState(5);
+  const [currentPosition, setCurrentPosition] = useState(0);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [answerId, setAnswerId] = useState(0);
   const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
