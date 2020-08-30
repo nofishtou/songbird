@@ -35,7 +35,7 @@ export function Header(props: IHeaderProps): JSX.Element {
           Song<span className="color-red">Birds</span>
         </h1>
         <div>
-          <span>Your Score:</span>
+          <span>Ваш счёт:</span>
           <span className="header-score-number">{props.score}</span>
         </div>
       </div>

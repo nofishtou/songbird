@@ -83,7 +83,7 @@ export function MainPage(): JSX.Element {
       <div className="main-page-buttons">
         {isEnd ? (
           <button className="main-page-button" onClick={playAgain}>
-            Play again
+            Сыграть снова
           </button>
         ) : (
           <button
@@ -91,7 +91,7 @@ export function MainPage(): JSX.Element {
             onClick={changeStage}
             disabled={!isCorrectAnswer}
           >
-            Next level
+            Следующий уровень
           </button>
         )}
       </div>
